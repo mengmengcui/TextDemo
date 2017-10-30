@@ -66,9 +66,10 @@
 			float: right;
 		}
 		/*mainInfo*/
-		.mainInfo{
+		#mainInfo{
 			padding: 40px;
 			padding-bottom: 70px;
+			position: relative;
 		}
 		.mIheader h4{
 			font-size: 40px;
@@ -104,14 +105,23 @@
 	</style>
 	<script>
 		$(function(){
+			/**/
 			$("#header a").mousemove(function(){
-				$(this).css("color","#ffffff");
 				$(this).children("span").show();
 			});
 			$("#header a").mouseout(function(){
-				$(this).css("color","#333333");
 				$(this).children("span").hide();
 			});
+			/**/
+			$("#header a").click(function(){
+				$(".con").hide();
+				$("#header a").children("span").hide();
+				$("#header a").css("color","#333333");
+				var cid = $(this).attr("cid");
+				$(this).css("color","#ffffff");
+				$("div.con[cid="+cid+"]").show();
+			})
+			
 		})
 	</script>
 </html>
@@ -119,35 +129,42 @@
 	<div id="warpper">
 		<div id="container">
 			<div id="header">
-				<a href="#mainMe" class="glyphicon glyphicon-user" >
+				<a href="#mainMe" class="glyphicon glyphicon-user" cid="1" >
 					<span>
 						Me
 					</span>
 				</a>
-				<a href="#main" class="glyphicon glyphicon-lock">
+				<a href="#main" class="glyphicon glyphicon-lock" cid="2">
 					<span>
 						Work
 					</span>
 				</a>
-				<a href="#mainInfo" class="glyphicon glyphicon-envelope">
+				<a href="#mainInfo" class="glyphicon glyphicon-envelope" cid="3" >
 					<span>
 						Info
 					</span>
 				</a>
-				<a href="#column" class="glyphicon glyphicon-heart">
+				<a href="#column" class="glyphicon glyphicon-heart" cid="4" >
 					<span>
 						love
 					</span>
 				</a>
 			</div>
-			<div id="content">
-				<div id="mainMe" style="display: none;">
+			<div id="content" style="position:relative; top:0 ;left:0;">
+				<div id="mainMe" cid="1" style="display: block;" class="con">
 					<span class="nameInfo">崔萌萌</span>
 					<span class="zhiwei">前端开发</span>
 					<img src="img/people5.jpg" height="398px" width="300px"/>
+									<div style="clear: both;"></div>
 				</div>
-				<div id="main"></div>
-				<div id="mainInfo" class="mainInfo">
+				<div id="main" style="display: none;" cid="2" class="con">
+					<h4>Project display</h4>
+					<a href="#"><img src="#"/></a>
+					<a href="#"><img src="#"/></a>
+					<a href="#"><img src="#"/></a>
+					<a href="#"><img src="#"/></a>
+				</div>
+				<div id="mainInfo" style="display: none;" cid="3" class="con">
 					<div id="mIheader" class="mIheader">
 						<h4>Email Me</h4>
 					</div>
@@ -158,7 +175,7 @@
 						<button class="btn btn-success" >Send Message</button>
 					</div>
 				</div>
-				<div id="column"></div>
+				<div id="column" style="display: none;" cid="4" class="con"></div>
 			</div>
 			<div id="footer"></div>
 		</div>
