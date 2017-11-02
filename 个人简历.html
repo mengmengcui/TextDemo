@@ -103,6 +103,16 @@
 			float: right;
 			margin-right: 30px;
 		}
+		#footer{
+			position: relative;
+
+		}
+		#footer span{
+			position: absolute;
+			top:0;
+			left: 50%;
+			color: #C8E5BC;
+		}
 
 	</style>
 	<script>
@@ -121,8 +131,9 @@
 				$("#header a").css("color","#333333");
 				var cid = $(this).attr("cid");
 				$(this).css("color","#ffffff");
-				$("div.con[cid="+cid+"]").show();
+				$("div.con[cid="+cid+"]").fadeIn();
 			})
+			/*form验证*/
 			$("#mainReg").Validform();
 			
 		})
@@ -176,11 +187,13 @@
 						<input type="text" placeholder="Subject" name="subject" class="subject"/><br />
 						<textarea type="text" placeholder="Message" name="message" class="message"  tip="请在这里输入您的意见。" errormsg="很感谢您花费宝贵时间给我们提供反馈，请填写有效内容！"  datatype="s" altercss="gray" class="gray" name="msg" value=""></textarea><br />
 						<button class="btn btn-success" >Send Message</button>
-					</div>
+					</form>
 				</div>
 				<div id="column" style="display: none;" cid="4" class="con"></div>
 			</div>
-			<div id="footer"></div>
+			<div id="footer">
+				<span>© Double Meng</span>
+			</div>
 		</div>
 	</div>
 </body>
