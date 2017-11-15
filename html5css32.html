@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post" autocomplete="on">
+			<input type="text" id="city" list="citylist" />
+			<datalist id="citylist" style="display: none;">
+				<option value="beijing">beijing</option>
+				<option value="shanghai">shanghai</option>
+				<option value="guangzhou">guangzhou</option>
+			</datalist><br />
+			请输入日期：<input type="date" name="date1"/><br />
+			请输入月份：<input type="month" name="month1"/><br />
+			请输入年份和周数：<input type="week" name="week1" /><br />
+			请输入时间：<input type="time" name="time1" value="12:05:31"/><br />	
+			输入时间：<input type"datetime" name="datetime1"/>
+			<br />
+			<input type="text" pattern="[0-9]{6}" title="六位数字" placeholder="123455" required="required"/>
+			<input type="image" src="img/蝴蝶1.jpg" width="50px" height="50px" />
+			<input type="submit" value="同意" autofocus="on"/>
+			<input type="submit" value="拒绝" />
+		</form>
+	</body>
+</html>
