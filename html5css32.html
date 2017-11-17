@@ -3,25 +3,92 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			#login{
+				width:400px;
+				padding:1em 2em 0 2em;
+				font-size: 12px;
+			}
+			label{
+				line-height: 26px;
+				display: block;
+				font-weight: bold;
+			}
+			#name,#password{
+				border: 1px solid #ccc;
+				width:160px;
+				height: 22px;
+				padding-left: 20px;
+				margin:6px 0;
+				line-height: 20px;
+			}
+			.button{
+				margin: 6px 0;
+			}
+			span{
+				display:inline-block;
+				width: 80px;
+				text-align: right;
+			}
+			div:target{
+				background-color: red;
+			}
+			#red{
+				width: 100px;
+				height: 100px;
+				background: hsla(120,50%,50%,0.7);
+			}
+			#blue{
+				width: 200px;
+				height: 100px;
+				border-image: url(img/bg.jpg) 20px;
+				-moz-border-image: url(img/bg.jpg) 20px;
+			}
+			img{
+				position:absolute;
+				left: 0;
+				transform: rotate(0deg);
+				transition: left 1s linear;
+			}
+			div:hover img{
+				position:absolute;
+				left: 150px;
+				transform: rotate(30deg);
+			}
+			#pp{
+				width: 200px;
+				height: 100px;
+				border:1px solid #000000;
+				background-color: #008000;
+			}
+			#pp:hover{
+				background-color: red;
+				transition-property: background-color;
+			}
+		</style>
 	</head>
 	<body>
-		<form action="" method="post" autocomplete="on">
-			<input type="text" id="city" list="citylist" />
-			<datalist id="citylist" style="display: none;">
-				<option value="beijing">beijing</option>
-				<option value="shanghai">shanghai</option>
-				<option value="guangzhou">guangzhou</option>
-			</datalist><br />
-			请输入日期：<input type="date" name="date1"/><br />
-			请输入月份：<input type="month" name="month1"/><br />
-			请输入年份和周数：<input type="week" name="week1" /><br />
-			请输入时间：<input type="time" name="time1" value="12:05:31"/><br />	
-			输入时间：<input type"datetime" name="datetime1"/>
-			<br />
-			<input type="text" pattern="[0-9]{6}" title="六位数字" placeholder="123455" required="required"/>
-			<input type="image" src="img/蝴蝶1.jpg" width="50px" height="50px" />
-			<input type="submit" value="同意" autofocus="on"/>
-			<input type="submit" value="拒绝" />
-		</form>
+		<fieldset id="login">
+			<legend>用户登录</legend>
+			<form action="" method="post" class="form">
+				<label for="name">
+					<span>name:</span>
+					<input name="name" type="text" value="张三" id="name"  />
+				</label><br />
+				<label for="password">
+					<span>password:</span>
+					<input name="password" type="text" value="" id="password" disabled="disabled"  />
+				</label>
+			</form>
+			<input type="button" class="button" value="登录" />
+		</fieldset>
+		
+		<div id="red">red</div>
+		<div id="blue">blue</div>
+		<div class="div1">
+			<img src="img/蝴蝶1.jpg" style="width: 100px;height: 100px;"/>
+		</div>
+		<div id="pp">
+		</div>
 	</body>
 </html>
