@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> CSS 七种三栏布局技巧</title>
+		<style type="text/css">
+			.cont{
+				float: left;
+				width: 100%;
+			}
+			.main{
+				margin-left: 210px;
+				margin-right: 110px;
+				background-color: green;
+				height: 200px;
+			}
+			.left{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				float: left;
+				margin-left: -100%;  //?使对象向左移动一段距离，这段距离等于父体的内容宽度，上浮到前面元素的最左边
+			}
+			.right{
+				width: 100px;
+				height: 200px;
+				background-color: blue;
+				float: right;
+				margin-left: -210px; //?
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cont">
+			<div class="main"></div>
+		</div>
+		<div class="left"></div>
+		<div class="right"></div>
+	</body>
+</html>

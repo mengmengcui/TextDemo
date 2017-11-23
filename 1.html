@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				width: 100%;
+				perspective: 1000px;
+			}
+			.box{
+				width: 100%;
+				perspective: 1000px;
+			}
+			.bt{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				-webkit-transform-style:preserve-3d;
+				-webkit-transition:1.5s;
+				-moz-transform-style:preserve-3d;
+				-moz-transition:1.5s;
+			}
+			.box:hover .bt{
+				-webkit-transform:rotateY(180deg);
+				-moz-transform:rotateY(180deg);
+			}
+			.b1,.b2{
+				position: absolute;
+			}
+			.b1{
+				transform: rotateY(180deg);
+			}
+		</style>
+		<script>
+			var obj1 = {name: 'obj1', fn: function() {document.write(this.name);}
+			};
+			var obj2 = {name: 'obj2'};
+			var obj3 = {name: 'obj3'};
+			obj1.fn();
+			var newFn = obj1.fn;
+			newFn();
+			newFn.call(obj2);
+			obj3.fn = newFn;
+			obj3.fn();
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="bt">
+				<div class="b1" style="width: 200px;height: 200px;background-color: red;"></div>
+				<div class="b2" style="width: 200px;height: 200px;background-color: green;"></div>
+			</div>
+		</div>
+	</body>
+</html>

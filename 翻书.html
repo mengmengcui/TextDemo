@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>翻书</title>
+		<style type="text/css">
+			body{
+				margin: 0 auto;
+				padding: 0;
+				perspective: 1000px;
+				
+			}
+			ul{margin: 300px;
+				position: relative;
+				transform-style: preserve-3d;
+				transform: rotateX(30deg);
+				background-color: #fff
+			}
+			ul li{
+				position: absolute;
+				list-style: none;
+				width: 150px;
+				height: 200px;
+				border: 1px solid #000000;
+				float: left;
+				font-weight: bold;
+				text-align: center;
+				transform-origin: 0 50%;
+				background-color: #fff
+			}
+
+			ul li:nth-of-type(5){
+				background-color: #1976D2;
+				animation: fan5 17s ease 0s 1;
+			}
+			@keyframes fan5{
+				0% {
+					transform: rotateY(0deg);
+				}
+				50% {
+					transform: rotateY(-160deg);
+				}
+				100% {
+					transform: rotateY(0deg);
+				}
+			}
+			ul li:nth-of-type(4){
+				background-color: #FFFFFF;
+				animation: fan4 13s ease 2s 1;
+			}
+			@keyframes fan4{
+				0% {
+					transform: rotateY(0deg);
+				}
+				50% {
+					transform: rotateY(-150deg);
+				}
+				100% {
+					transform: rotateY(0deg);
+				}
+			}
+			ul li:nth-of-type(3){
+				background-color: #FFFFFF;
+				animation: fan3 9s ease 4s 1;
+			}
+			@keyframes fan3{
+				0% {
+					transform: rotateY(0deg);
+				}
+				50% {
+					transform: rotateY(-140deg);
+				}
+				100% {
+					transform: rotateY(0deg);
+				}
+			}
+			ul li:nth-of-type(2){
+				background-color: #FFFFFF;
+				animation: fan2 5s ease 6s 1;
+			}
+			@keyframes fan2{
+				0% {
+					transform: rotateY(0deg);
+				}
+				50% {
+					transform: rotateY(-110deg);
+				}
+				100% {
+					transform: rotateY(0deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li>end</li>
+				<li>第三页</li>
+				<li>第二页</li>
+				<li>第一页</li>
+				<li>首页</li>
+			</ul>
+		</div>
+	</body>
+</html>
